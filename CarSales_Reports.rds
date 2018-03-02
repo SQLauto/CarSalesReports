@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CarSales_Reports">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=DESKTOP-J0SK8G8;Initial Catalog=CarSales_Reports</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>84f3ad0a-c375-4b1b-8bff-89d832bd879f</DataSourceID>
+</RptDataSource>

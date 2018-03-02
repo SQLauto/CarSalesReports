@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>CarSales_Reports</DataSourceReference>
+      <CommandText>SELECT        1 AS ReportingMonth, 'January' AS MonthName
+UNION
+SELECT        2 AS Expr1, 'February' AS Expr2
+UNION
+SELECT        3 AS Expr1, 'March' AS Expr2
+UNION
+SELECT        4 AS Expr1, 'April' AS Expr2
+UNION
+SELECT        5 AS Expr1, 'May' AS Expr2
+UNION
+SELECT        6 AS Expr1, 'June' AS Expr2
+UNION
+SELECT        7 AS Expr1, 'July' AS Expr2
+UNION
+SELECT        8 AS Expr1, 'August' AS Expr2
+UNION
+SELECT        9 AS Expr1, 'September' AS Expr2
+UNION
+SELECT        10 AS Expr1, 'October' AS Expr2
+UNION
+SELECT        11 AS Expr1, 'November' AS Expr2
+UNION
+SELECT        12 AS Expr1, 'December' AS Expr2</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="ReportingMonth">
+        <DataField>ReportingMonth</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="MonthName">
+        <DataField>MonthName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

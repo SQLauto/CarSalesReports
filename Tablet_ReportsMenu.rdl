@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Sales Report</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>DarkBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <ActionInfo>
+          <Actions>
+            <Action>
+              <Hyperlink>http://localhost/ReportServer/Pages/ReportViewer.aspx?%2fCarSalesReports%2fTablet%2fTablet_TabbedReport&amp;rs:Command=Render</Hyperlink>
+            </Action>
+          </Actions>
+        </ActionInfo>
+        <Top>3.14764cm</Top>
+        <Left>5.34141cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.98708cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Sales Highlights</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>DarkBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <ActionInfo>
+          <Actions>
+            <Action>
+              <Hyperlink>http://localhost/ReportServer/Pages/ReportViewer.aspx?%2fCarSalesReports%2fTablet%2fTablet_ChartHighlight&amp;rs:Command=Render</Hyperlink>
+            </Action>
+          </Actions>
+        </ActionInfo>
+        <Top>4.44596cm</Top>
+        <Left>5.34141cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.98708cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Sales by Make</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>DarkBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <ActionInfo>
+          <Actions>
+            <Action>
+              <Hyperlink>http://localhost/ReportServer/Pages/ReportViewer.aspx?%2fCarSalesReports%2fTablet%2fTablet_SimpleSlicer&amp;rs:Command=Render</Hyperlink>
+            </Action>
+          </Actions>
+        </ActionInfo>
+        <Top>5.7726cm</Top>
+        <Left>5.34141cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.98708cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Sales and Costs</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>DarkBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <ActionInfo>
+          <Actions>
+            <Action>
+              <Hyperlink>http://localhost/ReportServer/Pages/ReportViewer.aspx?%2fCarSalesReports%2fTablet%2fTablet_SlicerHighlight&amp;rs:Command=Render</Hyperlink>
+            </Action>
+          </Actions>
+        </ActionInfo>
+        <Top>7.07092cm</Top>
+        <Left>5.34141cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.98708cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>CarsLogo</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.42016cm</Top>
+        <Left>0.65828cm</Left>
+        <Height>2.71708cm</Height>
+        <Width>2.18792cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Mobile BI Sales Reports</Value>
+                <Style>
+                  <FontSize>24pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>0.52599cm</Top>
+        <Left>4.30953cm</Left>
+        <Height>1.07625cm</Height>
+        <Width>10.33167cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Reseller Sales</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>DarkBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <ActionInfo>
+          <Actions>
+            <Action>
+              <Hyperlink>http://localhost/ReportServer/Pages/ReportViewer.aspx?%2fCarSalesReports%2fTablet%2fTablet_Tile&amp;rs:Command=Render</Hyperlink>
+            </Action>
+          </Actions>
+        </ActionInfo>
+        <Top>8.1799cm</Top>
+        <Left>5.34141cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.98708cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>4.46875in</Height>
+    <Style />
+  </Body>
+  <Width>6.5in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <EmbeddedImages>
+    <EmbeddedImage Name="CarsLogo">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAALEAAADeCAIAAAD96XYdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABZpSURBVHhe7Z2LdxRF2ofzDyxHVwUikAuLgAFC7kHZVVyuJqxLQO4IJCC3SEKAEG4ugojcRCGKInFBEJbVDbiABAUkgIRwj0RugRBDMAIJ8B3/gf1+UmVZqeqZzEx6prsn73N+J6enqrqm6feZ7p7JkA6ZMGFCL4Lo1Qsm/O8hIXjwC0H88gtMICeIBsCE2trauro6coLgMCcAOUFwyAlChZwgVMgJQoWcIFTICUKFnCBUvHOi94BhGGZ/MjIy+BYT3oMd6IUTGDN8+lf2jyf/FsIVXjsxOqdozExbZ9SMfdjOqqqqmpoavt2EN/jiRPqcrzPybJrxuV8LJwDfbsIbfHRi0oIDkxcetFtenX+AnGg6vjvx2hvf2irT/nGInDCFJjmRs/TwzLeK7ZAZbx4mJ8yiqU7krTg6d6XFmbP8CDlhIiY48fqa7yzMgtXHyAlzMceJJetK3sy3IIvXHicnTMc0J5Z/WLrio4Dm7fWl5IQ/MNOJdwpOyRk8OjfyqRiv0qv/mJS0qTmvb1Gm0rPq41PkhJ8w2Yl1m8/kf3qW5W8vZ4b4yhOtwp55ftBba78Ws8lZu+mMX524cKmWLVRU3mELQCyL3mDFfCc+2nZuw/bzyKDhr/EKG9GydZgIb9JAV8a0pWw2kQ8/O+dXJ1DylybtnjT/AJL79hHe+ssvrIWFNwUpfnHin59/jwweOZ3XVuOpzrFsDMur05e1CnVpRtactWJkwb/LzHVi665y1HhJfol8GIATLIoTrFF2ovjEDYxBsMCbAgg2VT6SmYW/nNi688Kw0Vm8qhqdno77bFe5nAVv/pP3abQODWdjthReMNeJk+dv6uX3ygnDxsAAG8RTFxZd5q1m4EcnRrySzauq0Tkq7vO9
+F5WgkXdrTJ+1fMfuH0x3oqj4GtutclHFvkZwqmKNQJRfiHLzVp3sBB6y9sAgu4ujHW81A2uceLpL/K79l5WMHj+Dd2v8fUi6P5wAOGugnAj84E1S+eV9DRVYo3zwgDRsddmewCAbGQxORHWN33voqpKxE3J4t8bTXeL85IQhnjthLUHlRNfohG+OXlOS/upM3q3RFCfwesJ1g3xgx1EX4Q+MMMsJPClmwHgWH876OHphBkQ+jAmCyolu3RMOl1QqmTh5Fu/W6N1/iA9OHC25hL3Gdhz2Giq0puC02I/MDDxEtfATJxH+j/TGCYwU4U2/wU4rbBURtLDqslUwFZMVT8Q2A2FvJdCCZWVdyP3r1A9PeWJ7WJeI/A/xDWuciI5JPH76RyWjxkzi3RrZuSt8O05gH8l7TexEhDkhHiqVZo2eOMEascCbHoLCsHbDiHrjJ3MCAolevK11tbp4FvG8euTN8w1rnIiJTTxddlMJGnl3Q3DxUVh0yTcn5BeTErwc/eQE1mKNLDg44ayBw4N8lGIRa6FXbmQ/MR5TKX6wQwV65anYQ9biVCdi45LKLt6SU7D5C97XkDZtI95dX2iKE9hleDliL7Pgn+MPJ/C6F42Ich3AzlaiV0wlbwkCG9jxgwGlRJfYpLr6B2Iq8SyYR17RN6xxIi4+6VJFrcjmrf8Jj4jkfRK4FM3/eNeeg1d8dkI+JouTsYzYrfKbSdHYqBN6o2H9ZOQBYi3ZJP2CQO6V5xSNUIE3mYE1TkREtE9ISGbBMm/9jbDwyO6xiTm5iw8dr9x/5FpTnMAeZHsNu4//Gxrifl/74IQ41Lt6RiDml6cyfFKB++0MBifcExOX+MbS977cd9KJThgOUzAcY/ikAvfbGSTHicTE5KSkHknJPSLbq8cJRtt2ES8OHLZ9Zwk5AdxvZzA4gVPGjzV3f/q5vq7+fv29B7u+3D3gxVTe1xBcY86cu9KJTrh6RiDml6cyfFKB++0MNicePPi/
+u3X3b9XW9++fwrs1fP58IvBOyFe1ypsOhuEvY4Hhkwrcb2dQOXHn7j0WOFF6+oJ+vckIbRP+0aeHHeGE/GtVzKNXS6yCyFMZPqlA78XMrAUxfEvlM1Y6UfNTnZwb1XfiE5L4CI2BaeMd4QSQP2XCVIVFl1E/BIcNMV708nWa5sSagtOsEUYaHpy8wjInYICembPm8hEanaPinOKE8rGVHtErb5XhkwoMe+VnwTJ7iJ+821escQLHg6vXf9aT49qJ1k+GO8UJgBexmEQOGotP3DDcKsMnFRj2Gv5aRJ7TN6xxIi4+qfzyT3qyZuTxERq+OYHjNqqF6B8OMtDOBmAkb3LRiOMzaxQHamDYKED9UCFWTvzEGPbBM07/eIi15K0yfFKBq17MyZ5CTNj0b4Za40RMXOK58ho9mVlz+AgN35zg22017NffTsEaJ7rHJJaeq9YzJTOXj9BwtBPOwhonorsnHD15Qw/a+QgN364x+XYT3mCNE12jEw4dr1Sy5v3tvNuIzJnLyYnAYI0TXbrFFxVXyFn38c42bSN4t0aAv6PbzLHGiSfbhL+SkSPyTM++aOF9GujKL9hHTgQMa5zwnORn+xRswxswH38Hxreb8AY/OjHcVyfwFqNTVNzAtPFrPtz7r90/iJATgcFfTnxaeGHDttLFK3d4mxX5e7Cuq5ATAcAvTqBy/gs54W/Md2L9Z+f8HXLCr5jsxHubTgcm5IT/MNMJ1CmQISf8hGlOLPvgROBDTvgDc5x4473jVoWcMB0TnEBVrA05YS5NdYJ90cPykBMm0iQnspcctk/ICbPw3QnUwG4hJ0zBRycmzjtgz5ATTccXJ8bN3m/nkBNNxGsnsMftH3KiKXjnRGpqKobZn5SUFHLCZ7ADvXCCwXa3I+BbTHiDL05UV1fzXW5vsJ18iwlv8MUJIrghJwgVcoJQIScIFXKCUCEnCBVyglAhJwgVcoJQIScIFXKCUAmEEyMSEzG5I8jIyOAb3YzB
+fvC7E5j52B/+cKxFC/vHfzvBQQTOie9atjzeqpWdc+zRR7GpVVVVNTU1fNObJQF1oqRdu5KICHvmeGiocALwTW+WBNqJ0o4dSzt1sltOREaSEwILnDgZHX0qJsY+KY2KIidkrHHidGLi6R497JBTsbHkhIJlTpx57rmzvXpZmzPPPktO6FjpxLm+fc8NGGBVzvbuTU4YYrETZS+9VJaWFvicT0khJ1xhvRPfDx9+YcSIQKZs8GBywg22cKJ87Njy9HSRrPj48BYtvEpcq1YIVtw7ZIg8lZ4Lo0eTE+6xixMXJ0++OG0aS3ZyMv/rqT4RFxr6fkqKmE3ODxkZ5ESj2MiJS9nZl3NykBk9e/LyaoQ/8kh8mzYieMg7NIZ07cpmE7mYmUlOeIK9nLiSl3dl3ryc55/nhdWIb9sWA0SOTZ+OFt6ngXnEyMuzZ5MTHmI7J64uWjSzTx9eVY348PCKJUvkHM/NjXjsMd7dELSzMVcXLCAnPMeWTvTvz6uqkRARcW3FCiX9unbl3RqLBg2qWLo0CJwoPnFD/PEu+c5y/sBpTrRvX7lunZJZAwfybo2hSUkBcOLmrbqi4mvsnoCe49Va8h1moQVv9Q9Oc6JDh6qNG5XMTkvj3RoJkZH+dgKv4Em/3S1Svo8ju83k1l3lhjd3dLWWK8gJl04kduz445YtSnJffpl3awTACRzJRbXkozoruasSulrLFbITG7af563+wWlOdO5884svlMwZOZJ3a0zs1cvfThQWXRbVkm8I694JV2u5QnbC8EbFJuIwJ5Kiom7t2aNkZN++vFtj29SpAbiewGUB6qTcPB4qsBK6OtQbruWKiso75IQxSV27/nTggJLINm14d0P6de9+ffXqADhhSKNOuAfXnsrdi8WBh5xoQFJ09M/HjslZlpPD+xqS8NRTlfn5TXcCB3bUAHUVpcUrG1cAeMjO6yfP38QAHNvxE8toQS3xUJQQC+gSeTiHwVqMuvoH8i3IeetD
+xIRiEiyIkYhobyIOcyI5JubOmTMsJTt3zp82jXc0ZDhKW1BgihOokCgt3iCIVz/CLEElRAurijxGCSZ5OKvBWgAyYYBoRyAN6wKiC+Nl5+R4crnaKA5zArQPD2fhjyVwEhnZr1/xunXV27aZ5YR8MajEdCfkFTESka82hAQYJpbZMLbMIh91fMN5TriBOfFeVpaJTuAVKe9xhJUBYecOvbrsdCNKhQU8RPAiFq9jfS35KtLwnYiYkAUHMHbBgSsPWSY2W1NwmBPtw8IW5OQsnDNnYV5ej6SkP0VG8o6GJHbqtPG110xxQi4VqqK/CvFSFgPkWoo6GRZJX0vIh2dhYxRkJ5R3K9BC9OJ5eauvOMyJ5NjYuqtX7928+eDu3Qf19fdraxfMmsX7NIY980zTnQBidxt+WCQfSOTTv3sn9LVk+XAM0D/zdl91cuJ3J+orKzPT03m3himfWYnd7WF1Gd46AcQqCJ5UWZGcMEY4ca+mhgVO1F26hHMKH6GxdcIEpziBBVkLRC4wOWEMc6L++nU5cCLlhRf4CI2h8fFOcYKB8eIZEbG6+6qLp2uOTtwtL9czPzOTj9CIeOwxZzkB6uof6DUmJ4xJjom5feqUnnlTp/IRGlY54dtaAjEA87AWcsIY/bNtlrmTJvERGpY7YfjZYqNOiM9PRY3JCWMMfweG5GVk8BEaljuBoMBYFz9RMDbGcK3CossYgMjris88yAljfv1d+e7deqa4/qqVVU7g8CDa5bhxAvOLRha5wO6dcN/rFQ5zwvA7NUhkaCgfodE3KsoSJ/RfaCFoYR9GNeoERipP577q7nu9wmlOGH33bsnYsbzbiKZ/PoGaseDtAG9qiBjAH0uw34kjRcXXlAH6WtCFDTacCpKx8ezXHArue73CYU78+h3dDRvkLHb9xTsQmO9tBxkOcyLiiScS2rcXwUPeYQQGmPL7juaGw5zwkIjHH8ck7H8EkRPeYksnevfGmwUfEh8WNqFnz63p
+6RWLF8shJ7zCdk6I//VrbsgJz7GXE8pfBzA35ISH2MiJi1Om+DvkhCfYxQnlLwz5L+REo9jCCeVvkPk75IR7rHeibNCgwIeccIPFTih/xzSQISdcYaUT8p85tiTkhCGWOXE6OdkOISd0rHFCuVuCtSEnFCxwQrmfih1CTsgE2omSsDB7hpwQBNQJ5Z5sdgs5wQicE8pdG+0ZcgIEwonU1FRM7ghSUlLICewHvzvBYPvaKfCNbpYEzonq6mq+v20PNpVvdLMkcE4QToGcIFTICUKFnCBUyAlChZwgVMgJQoWcIFTICUKFnCBUyAlCxdZOJA7rg61yBBkZGXyjnQ/+OfZ1ApvUYu+oR78aY/M8sne0DfeezzjAiZb7xoYWjbdtWu0bx5yoqqqqqanhm+5knOFE2P6JkV9PsmEi9r8qOwH4pjsZxzjR6ZtpUQdes1U6H8gkJwKN4kT0wezYQzk2ScyhGeSEBehOJB/OffZwnuXpcXgOOWENhk70OjK/99GFFuaFIwvICctw5UT/Y4tSvltsSQYce4OcsBI3Tgw6/tbgkrcDnLSSZeSExbh3YkTpqtGl73ieFzfndJ+S0q5Xtye6R4qgpc/6acpIw4wqXU1OWE+jTow7+V7GqXXuM2Lf0m5j/tqinbu/uIveji8980rxKmVdkfRTa8kJW+CJE1POfJB59kNX6ZH590fCWvLKS6AxNKYDfsq9WB722TxlBmTamfXkhF3w0Imccxtnn/9ET7dBf+HVlmgT+9TwjXPEmKkH1iSO/f1POT8a1gotoheZea6AnLARnjsxt2zzgu+3yGkX25HXWeKPYa1zT3ysjET6z/v9bg+d/hov2ueVfUpO2AuvnFh8YfvS8h0s8YONby358tuZYoyS8LjOfFBIyIy976JlSfm/yAnHO7Hi4n9WXyxMWziR17Yhj4eHotdVRi7P5uNCQl7MHrXqYiE5ESROrDy7o2X4k7y2DemTkfbBlT2usmj/R3xcSEj7
++ChyInic6DGkDy+sxus78wsq9rtJq4g2bOQT4U+SE8HjBMrJ6qrQOqLttuvfug/GsMHkRPA4MWJ5FiuqztMJ0YU3vnOf0IdOdIjv8sqKHHIiSJzo2ieZGaDTJbH7Vz+WusmeH0s7J0RPeWfexqtF6y7/l5wIEifwzoIroDFs8thDNedc5eDNs3Dii8qjW68f8pMT4qaShUWX2S1G3ePqvpWCC5dqMZsnU3lL8Dgx+9B6N05Mzssu+ekHwxy7dcGvTqByys1n8XBNwWl0oaK5bx9Zkl8ibkCNZbRgALvLOUzCAh4iYsyG7efFhFhmjSYSPE5M3vEWr78RmXNzzv58Vc+Z2it+dcLVHaoR1L74xA22jBqz8WgULeI29ixwSx7AgodsRRNpLk5kzZt16U6Vkot3bvjVCbyIlfqhzOx1z1rEgiit4oEcdt4RD7Eu1qLjhDsnUueP5/U34pOd2yru3qyquyVSWVfjVydw2Bf1Q4qKr/GOhyi1Z6cSgMLL7azwLBWVd/CTtYvx/iB4nOidNZzX34gd33wJJ2ru/Vx77w5y695tfzshV11cCsiIAiPsvACgjmjUC09OeOdE+icLef2NEE7cvV9/78H9ADghnyB4U0PkA4lwAu8mRCOWWaNA9gzLjb438Y3gcaLR6wnmxJ37dUggnXBzyhdjPHRCOR9hdcMjUBNpXk7crK8VMXQiod+fO8R3GThjTPbnK81yQtRbx1snAN6qyCcdxM38vhE8Trj/zApOXL1brUR3ImXiML5CSMiUfy8zxQk3534fnGBgvFgXC+Z+ctVcnEgbNbTs9jU9ihNDZ03gK5jnBBZ4U0Pky0lvnQDoFU+hvKlpIkHlhJvfd3RPijtZe8kwfnJC/nBCP1Tg8lBUFPHBCSBOIuZeVQSVE4NcfMMKtI0MK64pcxXDc0f23jVNcQLHc7nq0EIc4XGpqFwTiOtQz52QP7+qqLzDW80gqJxYWLzR1fcnQP7eLfurT7kKc6Jj
+Qlc2GKehJl5jArz6RdkQKMIiN7JAEbZKo07ok4h1zSKonHD/Pas+w//2ZVWJm3x8Ylfr375qhdNQ050A8icKclBUXASIo4VXTogBCFY09yABgs2JN49ucvV9zNYRbTeXF+2oLHaVF4al8qG4mNi8xBQngFx7BEVdkl/CCsmMYS1sMDzAQxY3TrAB4irEXILNibWXvxyUM44XVuO5oQM2VXxjmEmr8vigkJDoPj1WmfE7MBkUGHIgyvtGb1/lGI+pzH3zqRCETnx05aueL/fj5dVAFwYoSV85m3c//O6dWb8XdSjB5sS7l3axvJA+iBdZo33c06kzRs/8YjUyZOGkbn168I6HXWx1ciJInFj2w+dyJm5aFCH97y73PBYe2i97pLw6OeF4JxZd2GaYcZ8sjB3c649hrRFe/99gjZ17J6Qtm6qsxUJOONiJvLJNnmTc9kVyMg++qwzQQ07YCw+dyDq7wa8hJ2yEJ05MPv1+AEJO2IVGnRh78t2AhZywBe6dGHpiRYBDTliPGydeOr7UkpATFuPKib7H/mFhyAkrMXTiL8VzLQ85YRm6E4nfzrZJyAlrUJzodjDLViEnLEB2osM3U2wYciLQCCfa7Z9g25ATAYU58fhXr9g85ETgSE1NxVY5gpSUFHIicLB97RT4RjsZBzhRXV3N97ftwabyjXYyDnCCCDDkBKFCThAq5AShQk4QKuQEoUJOECq/OzFw4EA8IIjU1FTuxP8ewh4QBOBO3L59mzcQzZvbt2//P6V3y3BiKnrIAAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>366aee87-b26b-455f-8f6e-c7f6d1967481</rd:ReportID>
+</Report>

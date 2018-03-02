@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>CarSales_Reports</DataSourceReference>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>Code.pr_WD_DateWidgetColorScheme</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="BckGrdSelected1">
+        <DataField>BckGrdSelected1</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="BckGrdNonSelected1">
+        <DataField>BckGrdNonSelected1</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="BckGrdSelected2">
+        <DataField>BckGrdSelected2</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="BckGrdNonSelected2">
+        <DataField>BckGrdNonSelected2</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TextSelected1">
+        <DataField>TextSelected1</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TextNonSelected1">
+        <DataField>TextNonSelected1</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

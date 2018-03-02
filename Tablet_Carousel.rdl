@@ -1,0 +1,2105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="CarSales_Reports">
+      <DataSourceReference>CarSales_Reports</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>41799262-6788-4b94-8049-3c91f78c06a7</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="CurrentYear">
+      <SharedDataSet>
+        <SharedDataSetReference>CurrentYear</SharedDataSetReference>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="CurrentYear">
+          <DataField>CurrentYear</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ReportingYear">
+      <SharedDataSet>
+        <SharedDataSetReference>ReportingYear</SharedDataSetReference>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="ReportingYear">
+          <DataField>ReportingYear</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="YearSelector">
+      <SharedDataSet>
+        <SharedDataSetReference>DateWidgetYear</SharedDataSetReference>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="Year1">
+          <DataField>Year1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Year2">
+          <DataField>Year2</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Year3">
+          <DataField>Year3</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ColorScheme">
+      <SharedDataSet>
+        <SharedDataSetReference>DateWidgetColorScheme</SharedDataSetReference>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="BckGrdSelected1">
+          <DataField>BckGrdSelected1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BckGrdNonSelected1">
+          <DataField>BckGrdNonSelected1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BckGrdSelected2">
+          <DataField>BckGrdSelected2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BckGrdNonSelected2">
+          <DataField>BckGrdNonSelected2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TextSelected1">
+          <DataField>TextSelected1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TextNonSelected1">
+          <DataField>TextNonSelected1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Carousel">
+      <Query>
+        <DataSourceName>CarSales_Reports</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ReportingYear">
+            <Value>=Parameters!ReportingYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@BatchRow">
+            <Value>=Parameters!BatchRow.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Code.pr_TabletCarouselCarousel</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="FirstElement">
+          <DataField>FirstElement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SecondElement">
+          <DataField>SecondElement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ThirdElement">
+          <DataField>ThirdElement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FourthElement">
+          <DataField>FourthElement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FifthElement">
+          <DataField>FifthElement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SixthElement">
+          <DataField>SixthElement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SeventhElement">
+          <DataField>SeventhElement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="MaximumElements">
+      <Query>
+        <DataSourceName>CarSales_Reports</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ReportingYear">
+            <Value>=Parameters!ReportingYear.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Code.pr_TabletCarouselMaxElements</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="MaxValue">
+          <DataField>MaxValue</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="TabletCarouselChart">
+      <Query>
+        <DataSourceName>CarSales_Reports</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ReportingYear">
+            <Value>=Parameters!ReportingYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ClientName">
+            <Value>=Parameters!ClientName.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Code.pr_TabletCarouselChart</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Make">
+          <DataField>Make</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrentYearSales">
+          <DataField>CurrentYearSales</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="PreviousYearSales">
+          <DataField>PreviousYearSales</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CurrentYearProfits">
+          <DataField>CurrentYearProfits</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="PreviousYearProfits">
+          <DataField>PreviousYearProfits</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="TabletCarouselClient">
+      <Query>
+        <DataSourceName>CarSales_Reports</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ReportingYear">
+            <Value>=Parameters!ReportingYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@BatchRow">
+            <Value>=Parameters!BatchRow.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>Code.pr_TabletCarouselClient</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ClientName">
+          <DataField>ClientName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Year1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Year1.Value</Value>
+                                  <Style>
+                                    <FontStyle>=IIF(Parameters!ReportingYear.Value = Fields!Year1.Value, "Italic", "Normal")</FontStyle>
+                                    <FontWeight>=IIF(Parameters!ReportingYear.Value = Fields!Year1.Value, "ExtraBold", "Normal")</FontWeight>
+                                    <Color>=IIF(Parameters!ReportingYear.Value = Fields!Year1.Value,First(Fields!TextSelected1.Value, "ColorScheme"),First(Fields!TextNonSelected1.Value, "ColorScheme"))</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Year1</rd:DefaultName>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>=Globals!ReportName</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="ReportingYear">
+                                      <Value>=Fields!Year1.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(Parameters!ReportingYear.Value = Fields!Year1.Value,First(Fields!BckGrdSelected1.Value, "ColorScheme"),First(Fields!BckGrdNonSelected1.Value, "ColorScheme"))</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Year2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Year2.Value</Value>
+                                  <Style>
+                                    <FontStyle>=IIF(Parameters!ReportingYear.Value = Fields!Year2.Value, "Italic", "Normal")</FontStyle>
+                                    <FontWeight>=IIF(Parameters!ReportingYear.Value = Fields!Year2.Value, "ExtraBold", "Normal")</FontWeight>
+                                    <Color>=IIF(Parameters!ReportingYear.Value = Fields!Year2.Value,First(Fields!TextSelected1.Value, "ColorScheme"),First(Fields!TextNonSelected1.Value, "ColorScheme"))</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Year2</rd:DefaultName>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>=Globals!ReportName</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="ReportingYear">
+                                      <Value>=Fields!Year2.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(Parameters!ReportingYear.Value = Fields!Year2.Value,First(Fields!BckGrdSelected1.Value, "ColorScheme"),First(Fields!BckGrdNonSelected1.Value, "ColorScheme"))</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Year3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Year3.Value</Value>
+                                  <Style>
+                                    <FontStyle>=IIF(Parameters!ReportingYear.Value = Fields!Year3.Value, "Italic", "Normal")</FontStyle>
+                                    <FontWeight>=IIF(Parameters!ReportingYear.Value = Fields!Year3.Value, "ExtraBold", "Normal")</FontWeight>
+                                    <Color>=IIF(Parameters!ReportingYear.Value = Fields!Year3.Value,First(Fields!TextSelected1.Value, "ColorScheme"),First(Fields!TextNonSelected1.Value, "ColorScheme"))</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Year3</rd:DefaultName>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>=Globals!ReportName</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="ReportingYear">
+                                      <Value>=Fields!Year3.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(Parameters!ReportingYear.Value = Fields!Year3.Value,First(Fields!BckGrdSelected1.Value, "ColorScheme"),First(Fields!BckGrdNonSelected1.Value, "ColorScheme"))</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>YearSelector</DataSetName>
+            <Top>0.20006cm</Top>
+            <Left>0.24719cm</Left>
+            <Height>0.6cm</Height>
+            <Width>7.5cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="TxtFirstElement">
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!FirstElement.Value, "Carousel")</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontSize>6pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Parameters!BatchRow.Value &lt;= Sum(Fields!MaxValue.Value, "MaximumElements") AND Not IsNothing(First(Fields!FirstElement.Value, "Carousel"))
+,Parameters!BatchRow.Value - 3
+,Parameters!BatchRow.Value
+)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.45708in</Top>
+            <Left>0.4119in</Left>
+            <Height>0.90625in</Height>
+            <Width>1.02083in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundImage>
+                <Source>Embedded</Source>
+                <Value>CarouselLeft3</Value>
+                <BackgroundRepeat>Clip</BackgroundRepeat>
+              </BackgroundImage>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TxtSecondElement">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!SecondElement.Value, "Carousel")</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Parameters!BatchRow.Value &lt;= Sum(Fields!MaxValue.Value, "MaximumElements") AND Not IsNothing(First(Fields!SecondElement.Value, "Carousel"))
+,Parameters!BatchRow.Value - 2
+,Parameters!BatchRow.Value
+)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.45708in</Top>
+            <Left>1.4364in</Left>
+            <Height>0.90625in</Height>
+            <Width>1.20833in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundImage>
+                <Source>Embedded</Source>
+                <Value>CarouselLeft2</Value>
+                <BackgroundRepeat>Clip</BackgroundRepeat>
+              </BackgroundImage>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TxtThirdElement">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!ThirdElement.Value, "Carousel")</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Parameters!BatchRow.Value &lt;= Sum(Fields!MaxValue.Value, "MaximumElements") AND Not IsNothing(First(Fields!ThirdElement.Value, "Carousel"))
+,Parameters!BatchRow.Value - 1
+,Parameters!BatchRow.Value
+)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.45708in</Top>
+            <Left>2.66714in</Left>
+            <Height>0.90625in</Height>
+            <Width>1.40625in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundImage>
+                <Source>Embedded</Source>
+                <Value>CarouselLeft1</Value>
+                <BackgroundRepeat>Clip</BackgroundRepeat>
+              </BackgroundImage>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TxtFourthElement">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!FourthElement.Value, "Carousel")</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>SemiBold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>0.45708in</Top>
+            <Left>4.09789in</Left>
+            <Height>0.90625in</Height>
+            <Width>1.5in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundImage>
+                <Source>Embedded</Source>
+                <Value>CarouselMain</Value>
+                <BackgroundRepeat>Clip</BackgroundRepeat>
+              </BackgroundImage>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TxtFifthElement">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!FifthElement.Value, "Carousel")</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Sum(Fields!MaxValue.Value, "MaximumElements") &lt;= Parameters!BatchRow.Value
+,Parameters!BatchRow.Value
+,Parameters!BatchRow.Value + 1
+)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.45708in</Top>
+            <Left>5.59738in</Left>
+            <Height>0.90625in</Height>
+            <Width>1.40625in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundImage>
+                <Source>Embedded</Source>
+                <Value>CarouselRight1</Value>
+                <BackgroundRepeat>Clip</BackgroundRepeat>
+              </BackgroundImage>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TxtSixthElement">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!SixthElement.Value, "Carousel")</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Sum(Fields!MaxValue.Value, "MaximumElements") &lt;= Parameters!BatchRow.Value
+,Parameters!BatchRow.Value
+,Parameters!BatchRow.Value + 2
+)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.45708in</Top>
+            <Left>7.02188in</Left>
+            <Height>0.90625in</Height>
+            <Width>1.19792in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundImage>
+                <Source>Embedded</Source>
+                <Value>CarouselRight2</Value>
+                <BackgroundRepeat>Clip</BackgroundRepeat>
+              </BackgroundImage>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TxtSeventhElement">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!SeventhElement.Value, "Carousel")</Value>
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontSize>6pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Sum(Fields!MaxValue.Value, "MaximumElements") &lt;= Parameters!BatchRow.Value
+,Parameters!BatchRow.Value
+,Parameters!BatchRow.Value + 3
+)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.45708in</Top>
+            <Left>8.23387in</Left>
+            <Height>0.90625in</Height>
+            <Width>1.01042in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundImage>
+                <Source>Embedded</Source>
+                <Value>CarouselRight3</Value>
+                <BackgroundRepeat>Clip</BackgroundRepeat>
+              </BackgroundImage>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Image Name="ImgStartList">
+            <Source>Embedded</Source>
+            <Value>LeftSet</Value>
+            <Sizing>FitProportional</Sizing>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Parameters!BatchRow.Value -7 &lt; 1, 1, Parameters!BatchRow.Value - 7)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.80708in</Top>
+            <Left>0.09246in</Left>
+            <Height>0.25in</Height>
+            <Width>0.25in</Width>
+            <ZIndex>8</ZIndex>
+            <ToolTip>Scroll back</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Image Name="ImgPrevList">
+            <Source>Embedded</Source>
+            <Value>LeftOne</Value>
+            <Sizing>FitProportional</Sizing>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Parameters!BatchRow.Value -1 &lt; 1, 1, Parameters!BatchRow.Value - 1)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>1.09041in</Top>
+            <Left>0.09246in</Left>
+            <Height>0.25in</Height>
+            <Width>0.23958in</Width>
+            <ZIndex>9</ZIndex>
+            <ToolTip>Move backward</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Image Name="ImgEndList">
+            <Source>Embedded</Source>
+            <Value>RightSet</Value>
+            <Sizing>FitProportional</Sizing>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Parameters!BatchRow.Value + 7 &lt;= Sum(Fields!MaxValue.Value, "MaximumElements")
+,Parameters!BatchRow.Value + 7
+,Parameters!BatchRow.Value + (Sum(Fields!MaxValue.Value, "MaximumElements") - Parameters!BatchRow.Value)
+)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.79249in</Top>
+            <Left>9.35887in</Left>
+            <Height>0.26042in</Height>
+            <Width>0.22917in</Width>
+            <ZIndex>10</ZIndex>
+            <ToolTip>Scroll forward</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Image Name="ImgNextList">
+            <Source>Embedded</Source>
+            <Value>RightOne</Value>
+            <Sizing>FitProportional</Sizing>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=IIF(Sum(Fields!MaxValue.Value, "MaximumElements") &lt;= Parameters!BatchRow.Value
+,Parameters!BatchRow.Value
+,Parameters!BatchRow.Value + 1
+)</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>1.10291in</Top>
+            <Left>9.36804in</Left>
+            <Height>0.26042in</Height>
+            <Width>0.22in</Width>
+            <ZIndex>11</ZIndex>
+            <ToolTip>Move forward</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Chart Name="Chart1">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart1_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Make.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Make.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Make.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>Current Year Sales</Label>
+                </ChartMember>
+                <ChartMember>
+                  <Label>Previous Year Sales</Label>
+                </ChartMember>
+                <ChartMember>
+                  <Label>Current Year Profits</Label>
+                </ChartMember>
+                <ChartMember>
+                  <Label>Previous Year Profits</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="CurrentYearSales">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <X>=Fields!Make.Value</X>
+                        <Y>=Sum(Fields!CurrentYearSales.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Subtype>Funnel</Subtype>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ChartAreaName>CurrYearSales</ChartAreaName>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+                <ChartSeries Name="PreviousYearSales">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <X>=Fields!Make.Value</X>
+                        <Y>=Sum(Fields!PreviousYearSales.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ChartItemInLegend>
+                        <Hidden>true</Hidden>
+                      </ChartItemInLegend>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Subtype>Funnel</Subtype>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+                <ChartSeries Name="CurrentYearProfits">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!CurrentYearProfits.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ChartItemInLegend>
+                        <Hidden>true</Hidden>
+                      </ChartItemInLegend>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Subtype>Pyramid</Subtype>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ChartAreaName>CurrYearProfits</ChartAreaName>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+                <ChartSeries Name="PreviousYearProfits">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!PreviousYearProfits.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ChartItemInLegend>
+                        <Hidden>true</Hidden>
+                      </ChartItemInLegend>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Subtype>Pyramid</Subtype>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ChartAreaName>PrevYearProfits</ChartAreaName>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="PrevYearSales">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                </ChartThreeDProperties>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+                <ChartInnerPlotPosition>
+                  <Top>10</Top>
+                  <Left>10</Left>
+                  <Height>90</Height>
+                  <Width>80</Width>
+                </ChartInnerPlotPosition>
+              </ChartArea>
+              <ChartArea Name="PrevYearProfits">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                </ChartThreeDProperties>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+                <ChartInnerPlotPosition>
+                  <Top>10</Top>
+                  <Left>10</Left>
+                  <Height>90</Height>
+                  <Width>80</Width>
+                </ChartInnerPlotPosition>
+              </ChartArea>
+              <ChartArea Name="CurrYearSales">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                  <Rotation>0</Rotation>
+                  <Inclination>0</Inclination>
+                  <WallThickness>0</WallThickness>
+                </ChartThreeDProperties>
+                <Style>
+                  <BackgroundColor>#00ffffff</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+                <ChartInnerPlotPosition>
+                  <Top>10</Top>
+                  <Left>10</Left>
+                  <Height>90</Height>
+                  <Width>80</Width>
+                </ChartInnerPlotPosition>
+              </ChartArea>
+              <ChartArea Name="CurrYearProfits">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                </ChartThreeDProperties>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+                <ChartInnerPlotPosition>
+                  <Top>10</Top>
+                  <Left>10</Left>
+                  <Height>90</Height>
+                  <Width>80</Width>
+                </ChartInnerPlotPosition>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <Position>BottomCenter</Position>
+                <Layout>WideTable</Layout>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                <EquallySpacedItems>true</EquallySpacedItems>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>=Cstr(Parameters!ReportingYear.Value - 1)</Caption>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontWeight>Bold</FontWeight>
+                  <TextAlign>General</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                </Style>
+                <ChartElementPosition>
+                  <Left>10</Left>
+                  <Height>5</Height>
+                  <Width>30</Width>
+                </ChartElementPosition>
+              </ChartTitle>
+              <ChartTitle Name="Title1">
+                <Caption>=Parameters!ReportingYear.Value</Caption>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontWeight>Bold</FontWeight>
+                  <TextAlign>General</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                </Style>
+                <ChartElementPosition>
+                  <Left>60</Left>
+                  <Height>5</Height>
+                  <Width>30</Width>
+                </ChartElementPosition>
+              </ChartTitle>
+              <ChartTitle Name="Title2">
+                <Caption>Sales</Caption>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontStyle>Italic</FontStyle>
+                  <TextAlign>General</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                </Style>
+                <Position>BottomCenter</Position>
+                <ChartElementPosition>
+                  <Top>30</Top>
+                  <Height>5</Height>
+                  <Width>100</Width>
+                </ChartElementPosition>
+              </ChartTitle>
+              <ChartTitle Name="Title3">
+                <Caption>Profits</Caption>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontStyle>Italic</FontStyle>
+                  <TextAlign>General</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                </Style>
+                <Position>BottomCenter</Position>
+                <ChartElementPosition>
+                  <Top>60</Top>
+                  <Height>5</Height>
+                  <Width>100</Width>
+                </ChartElementPosition>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>BrightPastel</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>TabletCarouselChart</DataSetName>
+            <Top>1.85292in</Top>
+            <Left>0.41191in</Left>
+            <Height>4.52083in</Height>
+            <Width>8.83238in</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Image Name="ImgEndList2">
+            <Source>Embedded</Source>
+            <Value>RightAll</Value>
+            <Sizing>FitProportional</Sizing>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>=Sum(Fields!MaxValue.Value, "MaximumElements")</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.45708in</Top>
+            <Left>9.36804in</Left>
+            <Height>0.26042in</Height>
+            <Width>0.22917in</Width>
+            <ZIndex>13</ZIndex>
+            <ToolTip>End of list</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Image Name="ImgEndList3">
+            <Source>Embedded</Source>
+            <Value>LeftAll</Value>
+            <Sizing>FitProportional</Sizing>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>=Globals!ReportName</ReportName>
+                    <Parameters>
+                      <Parameter Name="ReportingYear">
+                        <Value>=Parameters!ReportingYear.Value</Value>
+                      </Parameter>
+                      <Parameter Name="BatchRow">
+                        <Value>1</Value>
+                      </Parameter>
+                    </Parameters>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
+            <Top>0.45708in</Top>
+            <Left>0.09246in</Left>
+            <Height>0.26042in</Height>
+            <Width>0.22917in</Width>
+            <ZIndex>14</ZIndex>
+            <ToolTip>Start of list</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <Height>6.56124in</Height>
+        <Style />
+      </Body>
+      <Width>9.6736in</Width>
+      <Page>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReportingYear">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CurrentYear</DataSetName>
+          <ValueField>CurrentYear</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Reporting Year</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ReportingYear</DataSetName>
+          <ValueField>ReportingYear</ValueField>
+          <LabelField>ReportingYear</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="BatchRow">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReportParameter1</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="ClientName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>TabletCarouselClient</DataSetName>
+          <ValueField>ClientName</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>ClientName</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="CarouselMain">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="CarouselLeft1">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="CarouselLeft2">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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
+iiigAooooAKKKKACiiigAooooA//2Q==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="CarouselLeft3">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABTAGYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAorK8Qz3FvpINrO1vLJdW0PmoqllEk6IxAYEZwx6g0z+xLo/wCs8Q6q/wD34X/0GMUAbFFY/wDwj0Z+/qeqv6f6Yy4/75xR/wAIzp5+/JqMntJqVww/IvigDYpCQqlmIAAy
+Se1ZH/CLaKfv2Qk9fNkd8/XcTmlHhXw8GDf2HpzMDkM1sjH8yM0AXn1GxiIEl7boT03SqP61TfxNoEQBk1zTUB6bruMf1qZNE0mIER6XZID1226D+lXEhiiJMcSIT12qBQBlf8JVoR+5qltJ6eU2/P025yKP+En0s/ce6k9PKspnz9NqHNbFFAGP/wAJHan/AFdlqr/9w2df/QlFH9vSH7miaq/r+5Vcf99MK2KKAK2n3sWpaba30AYRXMKTIHGCFYAjPvg0VQ8J/wDIm6H/ANg+D/0WtFAB4l/5BUH/AGELL/0qirYrH8S/8gqD/sIWX/pVFWxQAUUUUAFFFFABRRRQAUUUUAFFFFAGP4T/AORN0P8A7B8H/otaKPCf/Im6H/2D4P8A0WtFAB4l/wCQVB/2ELL/ANKoq2KrX9hBqVm1rcB/LLK+UcowZWDKQRyCCAfwqh/wj6j/AFeqaqn/AG9s3/oWaANiisf+xLsfc8RaqnrxA2f++ojR/ZerL9zxDO3/AF0toj/JRzQBsUVj/YtfX7ms2jY6ebYE/ntkX+lHleJF/wCX3Spcf9OkiZ9v9Y2PrQBsUVj7vEi/8sdKk9/NkTH/AI6aPtXiFfvaRpx/656i5/nCKANiisf+0tYX7+gs3r5V3Gfy3Y4o/ti/X/WeHNT46skluw/9G5/SgDYorH/t5l/1mjaqn/bBW/8AQWNH/CSWg+/aaqnp/wASyds/98oaADwn/wAibof/AGD4P/Ra0U/wzDLb+FNHhmjeOWOxgR0dcMrBACCD0IooA1aKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//Z</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="CarouselRight1">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="CarouselRight2">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="CarouselRight3">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABTAGYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigCpqeoR6XYm6killHmRxhIgCzM7qigZIHVh3ql/bzL/rNG1VP+2Ct/6Cxo8S/wDIKg/7CFl/6VRVsUAY/wDwkloPv2mqp6f8Syds/wDfKGj/AISjSR9+aeP3ktJU/mo5rYoo
+Ax/+Er0Aff1e0j9fNkCY+u7GKlj8R6HNjyta058nA23SHJ/OtOopLaCbPmwRvkYO5AcigCNNQspQTHeW7gddsoP9as1QfQ9IlIMmlWLkdN1uh/pVb/hFPDw+7oenJ7x2yLn8hQBsUVj/APCL6OPuWrR+nlTSJj6bWGBR/wAI1YD/AFc2px+gTU7gAfhvx+lAGxRWP/wj6j/V6pqqf9vbN/6Fmj+xLsfc8RaqnrxA2f8AvqI0AbFFZvh66mvvDWlXlw++eezhlkbAGWZAScDjqaKAIfEv/IKg/wCwhZf+lUVbFY/iX/kFQf8AYQsv/SqKtigAooooAKKKKACiiigAooooAKKKKAMfwn/yJuh/9g+D/wBFrRR4T/5E3Q/+wfB/6LWigA8S/wDIKg/7CFl/6VRVsVj+Jg/9jq6RSy+XeWkrLFG0jbVuI2YhVBJwATwO1H/CR2p/1dlqr/8AcNnX/wBCUUAbFFY/9vSH7miaq/r+5Vcf99MKP7Y1BvueG9RHvJLbgfpKT+lAGxRWP/aOtN9zQguenm3iD89oP9aPtPiJvu6VpqA931B8j8BD/WgDYorH3eJG/wCWWlR+3mSPn/x0UeT4kb/l/wBKj9/sUj5/8iigDYorH+w66339atl9fKsMfluc8Uf2Vqjff8RXS56+Vbwj8tyH+tAGxRWP/Yl0f9Z4h1V/+/C/+gxij/hHoz9/U9Vf0/0xlx/3zigA8J/8ibof/YPg/wDRa0VpWlrDY2UFnbpsggjWKNck4VRgDJ9hRQBNRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/2Q==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="LeftOne">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="LeftAll">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAOcAAADCCAIAAAA990LyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAXEYAAFxGARSUQ0EAAAdoSURBVHhe7dY9chNZGEbhCaliCwSExCSkrprEW5hdeAeEhISEhCyBJbAUlsF0zXnLo5JsqSV1399zgilsS933ft8TzF9/zHpLtdZf/6v9+fPnw/59/fo17zNb1+/fv798+fLjx4/8fKj2w4cPfxUp7zO71OL16enpzZs3C5vlv/ntodr3798vf/v48ePfu/UfWtXa5Q69Ppe/napdbP2zW0fvNjvtyOu7d+8eHx/5dz6hWmunF72+KEe1Vr8zXonf59Oqtbpd9Er8Nd9RrdVqpVfiM/mmaq18V3klPpnvq9ZKdoNX4vN5imqtTDd7Jb6VZ6nW9u5Or8R380TV2n5t4pV4Qp6rWtujDb0Sz8nTVWvbtrlX4ml5h2ptq3bySjwzb1Kt3d+uXokn532qtXsq4JV4ft6qWrutYl6Jt+TdqrVrK+yVeFdOoFpbXxWvxBtzDtXamip6Jd6b06jWzlfdK/H2nEm19lqNeCXOkJOp1k5ryitxkpxPtXZYg16J8+SUqjVq1itxqpxVtda4V+JsObFqZ64Lr8QJc27VzllHXolz5vSqna3uvBKnzR1UO0+deiXOnJuodoa69kqcPPdR7dgN4JU4f26l2lEbxitxi9xNteM1mFfiLrmhakdqSK/EjXJP1Y7RwF6Je+W2qu294b0St8udVdtvk3gl7pibq7bHpvJK3DT3V21fTeiVuG+moNpemtYrcevMQrXtN7lX4u6ZiGpbTq/PMYHMRbVtptejmEOmo9rW0uuLMY3MSLXtpNczMZNMSrUtpNeLMZnMS7V10+vKmE+mptpa6fWqmFJmp9ry6fWGmFUmqNqS6fXmmFjmqNoy6fXOmFumqdq90+smMb3MVLX7pdcNY4aZrGr3SK+bxyQz
+X9Vum153inlmyqrdKr3uGlPNrFV7f3otELPNxFV7T3otFhPO3FV7W3otHHPO9FV7bXqtEtPODlS7Pr1WjJlnE6pdk16rx+SzD9WeT6+NxPyzFdW+ll6bii1kN6o9Ta8Nxi6yIdUeptdmYyPZk2pJr43HXrIt1eq1i9hOdjazWr12FDvK5uZUq9fuYlPZ32xq9dpp7CtbnEetXruOrWWXM6jV6wCxu2x0bLV6HSY2mL2Oqlavg8Ues93x1Op1yNhmdjySWr0OHDvNpsdQq9fhY7PZd+9q9TpJ7Ddb71etXqeKLWf3ParV64Sx6wjoS61ep42Nx0EvavU6eew9GtpXq1dbYvsx0bJavdpzGIiMNtXq1Y5CQny0plav9mJ4iJJ21OrVzoSKWGlBrV7tYtiImLpq9WorQ0jc1FKrV7sqnAB1qYLaX79+6dWuCi2RWkXtt2/f+Mdi99OnT/mb2esBJlJr/R/C9+/fed3S27dvtWvngwpQl+qoJe3aykASN3XVknbtYvCImBbUknbtTMCIlXbUknbtxSARJa2pJe3aUWCIjzbVknbtORhERstqSbu2BICYaF8taXfyWH009KKWtDttLD0O+lJL2p0w1h0BPaol7U4Vi87u+1VL2p0kVpyt966WtDt8LDf7HkMtaXfgWGs2PZJa0u6QsdDseDy1pN3BYpXZ7qhqSbvDxBKz17HVknYHiPVlozOoJe12HYvLLudRS9rtNFaWLc6mlrTbXSwr+5tTLWm3o1hTNjezWtJuF7Gg7Ey1pN3GYzXZlmoP026zsZTsSbWnabfBWEc2pNrX0m5TsYjsRrXn024jsYJsRbVr0m71GH72odr1abdijD2bUO21abdKDDw7UO1tabdwjDrTV+09abdYDDlzV+39abdAjDcTV+1WaXfXGGxmrdpt0+5OMdJMWbV7pN3NY5iZr2r3S7sbxhgzWdXunXY3iQFmpqotk3bvjNFlmqotmXZvjqFljqotn3ZviHFl
+gqqtlXavikFldqqtm3ZXxogyNdW2kHYvxnAyL9W2k3bPxFgyKdW2lnZfjIFkRqptM+0exSgyHdW2nHafYwiZi2rbT7tLXD8TUW0vTW6Xi2cWqu2rae1y5UxBtT02oV0um/urtt+msss1c3PV9t4kdrlg7qzaMRreLlfLbVU7UgPb5VK5p2rHa0i7XCc3VO2oDWaXi+Ruqh27YexyhdxKtTM0gF0On/uodp66tsuxcxPVzlandjlw7qDaOevOLkfN6VU7cx3Z5ZA5t2qtC7scLydWrVHjdjlYzqpaO6xZuxwpp1StndagXQ6T86nWXqspuxwjJ1Otna8RuxwgZ1Ktram6XV6d06jW1lfRLi/NOVRr11bFLq/LCVRrt1XYLi/Ku1Vr91TMLq/IW1Vr91fALg/P+1RrW7WrXR6bN6nWtm0nuzww71Ct7dHmdnlUnq5a268N7fKQPFe1tneb2OXreaJqrUx32uWLeZZqrWQ32+UreYpqrXw32OXD+b5qrVZX2eVj+aZqrW4r7fKBfEe11kIX7fKnfFq11k5n7PLLfE611lov2uXHfEK11mZHdvlH/naqtkB5n9mlDu0u5beHaj9//pw/7tnj42PeZ7auxe7Dw8PT01N+PlRr1kuqtd768+dfBqrGxpj7rbEAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="LeftSet">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAPoAAAB9CAIAAAAEO+kKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAXEYAAFxGARSUQ0EAAAdQSURBVHhe7dc7alxJGIZhgaExGATOFAgEihwo8AYMChUJg5OeTEtw6F0o1HK0BC3BoUOHDuVm3m80TV9On1Onqk5dvjcY1Opzqf/ngZHPXp3rJnN3HWXurqPMPUc/f/58eHhYr9f67LL0/Pz89evXHz9+6LO5pw7oZ/+1+agvXMo20G9vb7X0s/+Rm3uqdqC/e/du819zT9029NVqxQ/6ztxTtAP9+vr6/v7+w4cPm5/NPV070G9ubr59+8ZHXWHucTsI/Z9/M/d0HYTO2vmlrjP3WA1AJ3NP0QB04itdbe7zOwmdzD1uJ6ETF+gec5/TSOhk7rEaCZ24THeae1iToJO5z28SdOJi3W/uUwuATuY+pwDoxC16irmPLxg6mXtYwdCJG/Uscx/TTOhk7lObCZ24XU809+GiQCdzH18U6MRD9FxzP1ZE6GTuY4oInXiUnm7u+0WHTuY+XHToxAP1DnPfLhF0MvdjJYJOPFZvMndKCp3Mfb+k0ImH633mngE6mft2GaATr9Bbe+aeDTqZO2WDTrxI7+6Te2boZO6ZoROv0wl6474IdOqZ+yLQiZfqHP1wXxA69cl9QejEq3WaHrgvDp164744dOIAOlPb3AuBTv1wLwQ6cQydrFXuRUGnHrgXBZ04jM7XHvcCoVPb3AuEThxJp2yJe7HQqVXuxUInDqaztsG9cOjUHvfCoRPH04lr514FdGqJexXQiUPq3PVyrwg6tcG9IujEUXX6GrlXB51q514ddOLAmqEu7pVCp3q5VwqdOLYmqYV71dCpRu5VQycOr3nK594AdKqLewPQiRE0Vcncm4FOtXBvBjoxiGYrk3tj0Kl87o1BJ8bRhKVxbxI6lcy9SejEUJqzHO4NQ6cyuTcM
+nRhN05bAvXnoVBr35qETA2rmZbl3Ap3K4d4JdGJMTb4U966gUwncu4JODKv583PvEDoty71D6MTI2kJO7t1Cp6W4dwudGFy7yMO9c+iUn3vn0InxtZHU3A39rZzcDf0tlqC9pONu6Dvl4W7oO7EKbScFd0M/WGruhn4wFqIdxeVu6AOl427oA7EWbSoWd0M/WQruhn4ylqN9zedu6COLy93QR8aKtLU53A19UrG4G/qkWJR2F8bd0AOaz93QA2Jd2uBU7oYe3Bzuhh4cS9Mex3M39JmFcTf0mbE6bXMMd0OP0lTuhh4lFqidDnM39IiN527oEWON2uwx7oYevTHcDT16LFP73edu6Ika5m7oiWKl2vI291+/fhl6uo5xf3l5MfR0sVjtepv7er3mu/Pzc0OP3jHunz59Yu1XV1eGHj12q11vc9/8//Ti4oKvP378+OXLF93hYnSM+9PT0/v371n75eXl3d2dbnAxYrHa9c7f7n/+/Hl8fDT6FA387b75M/L79+9GnyJWqkXv/1N1k9GnaPifqpuMPkUsUys+yJ2MPm4nuZPRx401arkD3MnoYzWSOxl9rFig1nqSOxn9/CZxJ6OfH6vTQkdyJ6OfUwB3Mvo5sTStchJ3MvqwgrmT0YfFurTEAO5k9FObyZ2MfmosSusL5k5GP74o3Mnox8eKtLiZ3MnoxxSROxn9mFiOVhaFOxn9cNG5k9EPx1q0rIjcyeiPlYg7Gf2xWIjWFJ07Gf1+SbmT0e/HKrSgRNzJ6LfLwJ2MfjuWoNUk5U5GT9m4k9ET42spGbiT0WfmTkbP4FpHNu7UM/pFuFPP6BlZi8jMnfpEvyB36hM9w2oFi3Cn3tAvzp16Q8+YGn5B7tQP+kK4Uz/oGVBjL86dekBfFHfqAT2jaeBCuFPb6AvkTm2jZyiNWhR3ahV9sdypVfSMoyEL5E7toS+cO7WHnkE0XrHcqSX0VXCnltAzggYrnDu1gb4i7tQGeg6vkarg
+TrWjr4471Y6eY2uYirhTvegr5U71oufAGqM67lQj+qq5U43oOaoGqJQ71YW+Ae5UF3oOqaNXzZ1qQd8Md6oFPcfToRvgTuWjb4w7lY+eg+m4zXCnktE3yZ1KRs+RdNDGuFOZ6BvmTmWi5zA6YpPcqTT0zXOn0tBzDB2uYe5UDvpOuFM56DmAjtU8dyoBfVfcqQT0vFoH6oQ7LYu+Q+60LHpeqqN0xZ2WQt8td1oKPa/TITrkTvnRd86d8qPnRXp9t9wpJ3pzfysnel6hF3fOnfKgN/ed8qDn4Xqlub+VGr25Hyw1eh6rl5n7TunQm/tA6dDzQL3G3A+WAr25nywFeh6lF5j7QHHRm/vI4qLnIXq0uZ8sFnpzn1Qs9Nyuh5r7yOajN/eA5qPnRj3O3Cc1B725BzcHPbfoQeYeUBh6c59ZGHou1iPMPbip6M09SlPRc5luNveZjUdv7hEbj54LdJu5R2kMenOP3hj0fKUbzD1iw+jNPVHD6PmlLjX36B1Db+5JO4aej7rI3BO1j361Wm1+MPek7aPnB31t7knbQb/J3DO0g36TvjD3DL2h3/T792/91iXuDf3nz5/1K3N3XWXurqPM3XXT6+tfJyHSqvTrzbkAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="RightOne">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAMIAAADCCAIAAACUg4pmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAXEYAAFxGARSUQ0EAAASRSURBVHhe7dK5TWNhGEZhJCRiIiQkAkICCqAERwiJBLogJKMUSqIUSmCYea3xzMX23f7lW87JTv6cfBGtDkZUIBhRgXaM3t/fn56ePj4+tk80uR2jm5ubkz89PDyAiWa1Y3R9ff1t6PT0FEw0tyGjzWZze3t7dnYGJprekNH9/f3z8/Pj4yOYaHr7GSkw0cSOMVJgotHGGSkw0ZGmMlJgor3NY6TARIOWMFJgor8tZ6TARN+tZaTAlLwyjBSY0laSkQJTwsozUmBKVS1GCkxJqstIgSl8LRgpMAWuHSMFppC1ZqTAFKw+jBSYwtSTkQJTgPozUmBynRVGCkxOs8VIgcldFhkpMDnKLiMFJhdZZ6TAZDwfjBSYzOaJkQKTwfwxUmAylVdGCkxG8s1Igal7ERgpMHUsDiMFpi5FY6TA1LiYjBSYmhWZkQJTg+IzUmCqWhZGCkyVysVIgal4GRkpMBUsLyMFpiJlZ6TAtDIY7QLT4mA0DEwLgtH+wDQrGB0LTBOD0XhgGg1GUwPTkWA0LzDtDUZLAtMgGC0PTH+D0drA9B2MypQcE4xKlhYTjMqXEBOMapUKE4zqlgQTjFoUHhOM2hUYE4xaFxITjPoUDBOMehYGE4z6FwATjKzkGhOMbOUUE4ws5g4TjOzmCBOMrOcCE4x8ZBwTjDxlFhOM/GUQE4y8ZgoTjHxnBBOMItQdE4zi1BETjKLVBROMYtYYE4wi1wwTjOLXABOMslQVE4xyVQkTjDJWHBOM8lYQE4yyVwQTjOh3KzHBiHYtxgQjGrYAE4xof7MwwYiONRETjGi8UUwwoqkNML2+vm7pwIhmtdlsLi8vxeju7m5LB0Y0sW9AV1dXAnR+fv729vb5+bmlAyMa7Tgg
+BSM62BRACka0p+mAFIzov+YCUjCibcsAKRjRKkAKRqlbD0jBKGmlACkYpassIAWjRNUApGCUonqAFIyCVxuQglHY2gBSMApYS0AKRqFqD0jBKEi9ACkYua8vIAUjx1kApGDkMjuAFIycZQ2QgpGbbAJSMHKQZUAKRqazD0jByGheACkYmcsXIAUjQ3kEpGBkIr+AFIw65x2QglG3YgBSMOpQJEAKRk2LB0jBqFFRASkYVS82IAWjimUApGBUpTyAFIwKlw2QglGxcgJSMCpQZkAKRqsCkILRwgD0bzCaHYB+BqMZAehQMJoUgI4Ho5EANCUYHQxA04PRngA0Nxj9F4CWBaNtAFoTjABUoNSMAFSqpIwAVLZ0jABUo0SMAFSvFIwAVLvgjADUprCMANSygIwA1L5QjADUqyCMANQ394wAZCHHjABkJ5eMAGQtZ4wAZDM3jABkOQeMAGQ/04wA5CWjjADkK3OMAOQxQ4wA5DcTjADkvc6MABSjbowAFKkOjAAUr6aMABS1RowAFLvqjACUoYqMAJSnKowAlK3CjACUs2KMAJS5AowARKsYAYjUQkYAon+bzQhA9LMZjABEh5rECEB0vBFGAKIpHWQEIJreHkYAorkNGV1cXACI5jZkBCBa0I7Ry8sLgGhZO0ZEi4MRFQhGtLqvr18PdMhGRiIFtAAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="RightAll">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAOcAAADCCAIAAAA990LyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAXEYAAFxGARSUQ0EAAATwSURBVHhe7dI7SiRdHIbxCQVBMDMUI0NjQRAmF9Mvcwm9A5fgEnoJLsNluAxDv555C+1p+1JVfS7/y/MLCopzOG/y/PoEvKFa+PNd7dvb2/Pz8/v7+/APjPP6+npf33K5HPbWq725ufn119PTE+1ivOvra5VT1cnJybC3Xu3l5eVw/hftYiSVc3t7+7uO1ctqctj7We3q0tXVlS6t0C4OUjkPDw//1bF6WTUOez+r1fbqS7sYyUq1QrsYw1a1QrvYz2K1QrvYxW61Qrv4yXq1QrtY56NaoV2Ip2qFduGvWqHdzLxWK7Sbk+9qhXaziVCt0G4ecaoV2s0gWrVCu7HFrFZoN6rI1QrtxhO/WqHdSLJUK7QbQ65qhXa9y1it0K5feasV2vUoe7VCu75Q7Tfa9YJqN9GufVS7He1aRrX70K5NVHsY7VpDtWPRrh1UOw3tWkC1c9BuX1Q7H+32QrXHot32qLYM2m2Jakui3TaotjzarY1qa6Hdeqi2LtqtgWpboN2yqLYd2i2Faluj3eNRbR+0ewyq7Yl256Ha/mh3Kqq1gnbHo1pbaHcMqrWIdvejWrtodxeqtY52f6JaH2h3HdV6QrtCtf7QLtV6lbldqvUtZ7tUG0G2dqk2jjztUm00Gdql2phit0u1kUVtl2rji9cu1WYRqV2qzSVGu1Sbkfd2qTYvv+1SbXYe26Va/OGrXarFNy/tUi022W+XarGd5XapFvvYbJdqcZi1dqkWY9lpl2oxjYV2qRZz9G2XajFfr3apFsdq3y7VooyW7VItSmrTLtWivNrtUi1qqdcu1aKuGu1SLVoo2y7Vop1S7VItWju+XapFH8e0S7XoaV67VIv+prZLtbBifLtUC1vGtEu1sGh/u1QL
+u3a1S7WwbqPd5XJJtXDg7u7u7OxMJS0WC6qFaatez8/P1dDFxcXLy8vHxwfVwqitvbYph2ox2Z5ehWphyMFehWphwshehWrR2aRehWrRzYxehWrRwexehWrR1JG9CtWikSK9CtWiuoK9CtWiouK9CtWiikq9CtWisKq9CtWimAa9CtWigGa9CtXiKI17FarFTF16FarFZB17FarFBN17FarFKEZ6FarFAaZ6FarFTgZ7FarFFmZ7FarFP4z3KlSLgYtehWrhqVeh2tTc9SpUm5TTXoVq03Hdq1BtIgF6FapNIUyvQrXBBetVqDaskL0K1QYUuFeh2lDC9ypUG0SSXoVq3UvVq1CtYwl7Fap1KW2vQrXOJO9VqNYNev1CtQ7Q6waqNY1et6Jao+h1D6o1h14PolpD6HUkqjWBXieh2s7odQaq7YZeZ6PaDuj1SFTbFL0WQbWN0GtBVFsdvRZHtRXRayVUWwW9VkW1hdFrA1RbDL02Q7UF0GtjVHsUeu2Camei146odjJ67Y5qJ6BXI6h2FHo1hWoPoFeDqHYnejWLaregV+Oo9h/06gLVDujVEaqlV39SV0uvTiWtll5dS1ctvQaQqFp6DSNFtfQaTPBq6TWksNXSa2ABq6XX8EJVS69JBKmWXlNxXy29JuS4WnpNy2W19Jqcs2rpFStuqqVXfHFQLb1ig+lq6RVbGa2WXrGHuWrpFQcZqpZeMZKJaukVk/Sv9vT0VDfoFSP1r3aFXjHJVzm1DXvr1a5Kvb+/p1dMtVgshqxqenx8HPbWqwW8oFp48/n5PxgdyR6V1nGlAAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="RightSet">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAPoAAAB9CAIAAAAEO+kKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAXEYAAFxGARSUQ0EAAAbCSURBVHhe7dI5Th1BAEVRS0iIkMgRASKBEHkLTpCQECQIMpZBxlJYAqGX4dAhSyAkxC3uY/r8oYeq6hreiWzxu7vq6f54MWuGc7eGOHdryEfu9/f3JycnDw8P+r8lcXt7e3V19ffvX/3fYvrIfX9//8er4+NjR58Mm3fOz88dfWyLuW9vb7O+o0+Dtbe2tviHo49qMffT09Nfv37t7OywvqOPjZ0vLi4ODw8dfWyLuZ+dnV1fX19eXjr6NFi427zj6GNbnjscfQJsq8VfOfp41uUORx8Vq2rrTxx9DJtzh6OPhD218jeOPqy+ucPRB8eS2ncFRx/KsNzh6ANiQy27lqOfbkzucPRBsJ427cHRTzE+dzj6idhNa/bm6MeZmjsc/Wgsph0HcvRDhckdjn4EttKCozj6/kLmDkc/CCtpuwkcfR/hc4ej74l9tNpkjn69WLnD0W/EMtorEEe/Stzc4ejXYBMtFZSj/y5F7nD0S7GGNorA0X+WLnc4+gXsoHWicfRInTsc/TsW0C6ROfp5coej73B3LZJEy9HPmTsaj55ba4uE2ox+/tzRbPTcVysk11r0ueSOBqPnprr/TNqJPq/c0VT03FE3n1UL0eeYOxqJntvpzhmoO/p8c0f10XMv3TYbtUafe+6oOHpupHtmpr7oy8gdVUbPXXTDLNUUfUm5o7LouYXulrE6oi8vd1QTPefXrbJXevSl5o4Koufkuk8hyo2+7NxRdPScWTcpSonR15A7Co2e0+oOBSor+npyR3HRc06dvlilRF9b7igoek6ocxcu/+jrzB1FRM/ZdOIq5Bx9zbkj8+g5lc5akTyjrz93ZBs959Epq5Nb9K3kjgyj5yQ6X6Xyib6t3JFV9JxBJ6taDtG3
+mDsyiZ6v60wNmDf6dnPH7NHzXZ2mGXNF33rumDF6vqhzNCZ99M79wyzR8y2doEkpo3fuixJHz1f07Yalid65L5cset6vrzYvdvTOfZ0E0fNmfc9exYveuW8WNXreqS/ZJzGid+59RYqet+kb9k3Y6J37MMGj5z16u60QKnrnPkbA6HmD3mtrTY/euY8XJHqe1RuthynRO/epJkbPU3qX9TYueucexujo+b3eYgMNjd65hzQien6p522U/tE79/AGRc9v9KRN0Cd65x7L9+j//PmjrT/hr3rGJvse/b9//7S1c4+ti75bn+m79J+fnzX3G/6kX1sgXfQ/f/5k26OjI23t3KPqxjw4OGD0zu3trbb+hD/pAQvh9+/f763v7u7e399ra+ceyULoNzc3j4+PGvorfqDHbJqF0O/u7p6enjT0K+ceWP/Qwc/0sI21MXQ492CGhg5+rFfYcD1Dh3MPYFzo4BG9yIYYFDqc+yRTQgcP6nXWz4jQ4dxHmh46eFwvtU1Ghw7nPlio0MFL9GpbbWLocO4DhA0dvEofsGWChA7n3kuM0MEL9Rn7KmDocO4bxAsdvFYfszfBQ4dzXyl26ODl+qRFCx3OfYk0oYNP6MNtixo6nPsXKUMHH9LnW5UgdDh3SR86+JwO0Z5kocO5zxY6+KiO0pLEoaPp3OcNHXxaB2rDLKGj0dxzCB0cQMeq3Yyho7nc8wkdHEOHq9fsoaOh3HMLHRxGR6xRJqGjidzzDB0cSQetS1aho/Lccw4dHEzHrUWGoaPa3PMPHRxPhy5ftqGjwtxLCR0cUkcvWeaho6rcywodHFUXKFMRoaOS3EsMHRxY1yhNQaGj+NzLDR0cW5cpR3Gho+DcSw8dHF5XKkGhoaPI3OsIHVxBF8tb0aGjsNxrCh1cRNfLVQWho5jc6wsdXEeXzE81oaOA3GsNHVxKV81JZaEj69zrDh1cTRfOQ5WhI9PcWwgdXFDXnlvFoSO73NsJHVxTl59P
+9aEjo9xbCx1cVhPMoZHQkUXubYYOrqwh0moqdMyce8uhg4trjlQaDB2z5e7QwfU1SnzNho4ZcnfonzGCpomp8dCRNHeH/h1TaKA4HPq7RLk79FUYRDOF5tAXRM/doa/HLBorHIe+VMTcHXofjKPJQnDoa0TJ3aH3x0QabhqHvlHg3B36UAyl+cZy6D0Fy92hj8NcGnE4hz5IgNwd+hSMpimHcOgjTMrdoU/HdBq0H4c+2sjcHXooDKhZN3HoEw3O3aGHxYwadzWHHsSA3B16DIypiZdx6AH1yt2hx8OkGvorhx7chtwdemwMq7nfOPRIVubu0NNgXjbvOPSoluTu0FNiZIeexmLue3t7LN5x6AkwtUNPYzF3OPRktLhDT+Ij9y7xbnSHntjx8bFDT+Yjd7PqOXdriHO3Zry8/Af6U9NPwt+JhgAAAABJRU5ErkJggg==</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>fdea7bce-1e84-42c9-9be2-23e102c964c7</rd:ReportID>
+</Report>

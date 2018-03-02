@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>CarSales_Reports</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@StyleFamily">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>AnsiString</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandType>StoredProcedure</CommandType>
+      <CommandText>Code.pr_StyleOutput</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="ID">
+        <DataField>ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="StyleFamily">
+        <DataField>StyleFamily</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="HEADER_Font_Colour">
+        <DataField>HEADER_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="HEADER_Font_Size">
+        <DataField>HEADER_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="HEADER_Font_Family">
+        <DataField>HEADER_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="HEADER_Font_Style">
+        <DataField>HEADER_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="HEADER_Font_Weight">
+        <DataField>HEADER_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SUBHEAD_Font_Colour">
+        <DataField>SUBHEAD_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SUBHEAD_Font_Size">
+        <DataField>SUBHEAD_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SUBHEAD_Font_Family">
+        <DataField>SUBHEAD_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SUBHEAD_Font_Style">
+        <DataField>SUBHEAD_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SUBHEAD_Font_Weight">
+        <DataField>SUBHEAD_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_MAINTITLE_Font_Colour">
+        <DataField>TABLE_MAINTITLE_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_MAINTITLE_Font_Size">
+        <DataField>TABLE_MAINTITLE_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_MAINTITLE_Font_Family">
+        <DataField>TABLE_MAINTITLE_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_MAINTITLE_Font_Style">
+        <DataField>TABLE_MAINTITLE_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_MAINTITLE_Font_Weight">
+        <DataField>TABLE_MAINTITLE_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_MAINTITLE_Background_Colour">
+        <DataField>TABLE_MAINTITLE_Background_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_SUBTITLE_Font_Colour">
+        <DataField>TABLE_SUBTITLE_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_SUBTITLE_Font_Size">
+        <DataField>TABLE_SUBTITLE_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_SUBTITLE_Font_Family">
+        <DataField>TABLE_SUBTITLE_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_SUBTITLE_Font_Style">
+        <DataField>TABLE_SUBTITLE_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_SUBTITLE_Font_Weight">
+        <DataField>TABLE_SUBTITLE_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_SUBTITLE_Background_Colour">
+        <DataField>TABLE_SUBTITLE_Background_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_TOTAL_Font_Colour">
+        <DataField>TABLE_TOTAL_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_TOTAL_Font_Size">
+        <DataField>TABLE_TOTAL_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_TOTAL_Font_Family">
+        <DataField>TABLE_TOTAL_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_TOTAL_Font_Style">
+        <DataField>TABLE_TOTAL_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_TOTAL_Font_Weight">
+        <DataField>TABLE_TOTAL_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_TOTAL_Background_Colour">
+        <DataField>TABLE_TOTAL_Background_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_STANDARD_Font_Colour">
+        <DataField>TABLE_STANDARD_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_STANDARD_Font_Size">
+        <DataField>TABLE_STANDARD_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_STANDARD_Font_Family">
+        <DataField>TABLE_STANDARD_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_STANDARD_Font_Style">
+        <DataField>TABLE_STANDARD_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_STANDARD_Font_Weight">
+        <DataField>TABLE_STANDARD_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TABLE_STANDARD_Background_Colour">
+        <DataField>TABLE_STANDARD_Background_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_MAINTITLE_Font_Colour">
+        <DataField>CHART_MAINTITLE_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_MAINTITLE_Font_Size">
+        <DataField>CHART_MAINTITLE_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_MAINTITLE_Font_Family">
+        <DataField>CHART_MAINTITLE_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_MAINTITLE_Font_Style">
+        <DataField>CHART_MAINTITLE_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_MAINTITLE_Font_Weight">
+        <DataField>CHART_MAINTITLE_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_MAINTITLE_Background_Colour">
+        <DataField>CHART_MAINTITLE_Background_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_SUBTITLE_Font_Colour">
+        <DataField>CHART_SUBTITLE_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_SUBTITLE_Font_Size">
+        <DataField>CHART_SUBTITLE_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_SUBTITLE_Font_Family">
+        <DataField>CHART_SUBTITLE_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_SUBTITLE_Font_Style">
+        <DataField>CHART_SUBTITLE_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_SUBTITLE_Font_Weight">
+        <DataField>CHART_SUBTITLE_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_SUBTITLE_Background_Colour">
+        <DataField>CHART_SUBTITLE_Background_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_Y_AXIS_Font_Colour">
+        <DataField>CHART_Y_AXIS_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_Y_AXIS_Font_Size">
+        <DataField>CHART_Y_AXIS_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_Y_AXIS_Font_Family">
+        <DataField>CHART_Y_AXIS_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_Y_AXIS_Font_Style">
+        <DataField>CHART_Y_AXIS_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_Y_AXIS_Font_Weight">
+        <DataField>CHART_Y_AXIS_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_X_AXIS_Font_Colour">
+        <DataField>CHART_X_AXIS_Font_Colour</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_X_AXIS_Font_Size">
+        <DataField>CHART_X_AXIS_Font_Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_X_AXIS_Font_Family">
+        <DataField>CHART_X_AXIS_Font_Family</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_X_AXIS_Font_Style">
+        <DataField>CHART_X_AXIS_Font_Style</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CHART_X_AXIS_Font_Weight">
+        <DataField>CHART_X_AXIS_Font_Weight</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
